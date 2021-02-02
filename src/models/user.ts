@@ -1,6 +1,11 @@
 export interface User {
-  id: number;
-  name: string;
-  password: string;
-  description: string;
+  /**
+   * id
+   * @minimum 0
+   * @type integer
+   */
+  id: number
+  name: string
+  password: string
+  description: string
 }

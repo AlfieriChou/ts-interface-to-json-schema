@@ -6,11 +6,14 @@ export interface Options {
   tsconfig: string
 }
 
-export const buildJsonSchema = (interfaceModelsPath: string, options: Options) => {
+export const buildJsonSchema = (
+  interfaceModelsPath: string,
+  options: Options
+) => {
   const { type, tsconfig } = options
   const filepaths: string[] = readDirFilenames(interfaceModelsPath)
   return filepaths.reduce((acc, filepath) => {
-    if (filepath.endsWith('ts')) {
+    if (!filepath.endsWith('ts')) {
       return acc
     }
     const { definitions } = tsj.createGenerator({

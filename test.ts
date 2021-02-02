@@ -6,4 +6,6 @@ const options: Options = {
   tsconfig: path.join(__dirname, 'tsconfig.json')
 }
 
-console.log(buildJsonSchema(path.join(__dirname, 'src/models'), options), null, 2)
+const ret = buildJsonSchema(path.join(__dirname, 'src/models'), options)
+
+console.log(JSON.stringify(ret, null, 2))
